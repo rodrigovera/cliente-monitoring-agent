@@ -1,0 +1,831 @@
+{"timestamp": "2025-05-22 13:47:01,442", "error": "Started server process [13178]"}
+{"timestamp": "2025-05-22 13:47:01,443", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-22 13:47:01,443", "error": "Application startup complete."}
+{"timestamp": "2025-05-22 13:47:01,444", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-22 13:47:45,047", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-22 13:47:45,048", "error": "Exception in ASGI application
+"}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-22 20:18:47,238", "error": "Started server process [15414]"}
+{"timestamp": "2025-05-22 20:18:47,239", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-22 20:18:47,240", "error": "Application startup complete."}
+{"timestamp": "2025-05-22 20:18:47,241", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-22 20:20:25,722", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-22 20:20:25,723", "error": "Exception in ASGI application
+"}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-22 20:35:08,606", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-22 20:35:08,608", "error": "Exception in ASGI application
+"}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-22 20:35:11,273", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-22 20:35:11,274", "error": "Exception in ASGI application
+"}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-22 20:38:28,055", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-22 20:38:28,056", "error": "Exception in ASGI application
+"}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-22 22:42:40,101", "error": "Invalid HTTP request received."}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 485, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/usr/lib/python3/dist-packages/h11/_util.py", line 77, in _reraise_as_remote_protocol_error
+    raise self
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 467, in next_event
+    event = self._extract_next_receive_event()
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 409, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/usr/lib/python3/dist-packages/h11/_readers.py", line 81, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+{"timestamp": "2025-05-23 00:41:48,437", "error": "Started server process [17076]"}
+{"timestamp": "2025-05-23 00:41:48,438", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-23 00:41:48,439", "error": "Application startup complete."}
+{"timestamp": "2025-05-23 00:41:48,439", "error": "[Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use"}
+{"timestamp": "2025-05-23 00:41:48,440", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-23 00:41:48,440", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-23 00:42:00,933", "error": "Started server process [17077]"}
+{"timestamp": "2025-05-23 00:42:00,933", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-23 00:42:00,934", "error": "Application startup complete."}
+{"timestamp": "2025-05-23 00:42:00,934", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-24 00:54:25,663", "error": "Started server process [25755]"}
+{"timestamp": "2025-05-24 00:54:25,665", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-24 00:54:25,665", "error": "Application startup complete."}
+{"timestamp": "2025-05-24 00:54:25,666", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-24 01:16:51,250", "error": "Shutting down"}
+{"timestamp": "2025-05-24 01:16:51,352", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-24 01:16:51,352", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-24 01:16:51,352", "error": "Finished server process [25755]"}
+{"timestamp": "2025-05-24 01:16:57,549", "error": "Started server process [25952]"}
+{"timestamp": "2025-05-24 01:16:57,550", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-24 01:16:57,550", "error": "Application startup complete."}
+{"timestamp": "2025-05-24 01:16:57,551", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-24 11:49:53,412", "error": "Started server process [32482]"}
+{"timestamp": "2025-05-24 11:49:53,413", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-24 11:49:53,414", "error": "Application startup complete."}
+{"timestamp": "2025-05-24 11:49:53,415", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-24 16:36:33,508", "error": "Started server process [34104]"}
+{"timestamp": "2025-05-24 16:36:33,511", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-24 16:36:33,512", "error": "Application startup complete."}
+{"timestamp": "2025-05-24 16:36:33,512", "error": "[Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use"}
+{"timestamp": "2025-05-24 16:36:33,513", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-24 16:36:33,513", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-24 16:36:43,850", "error": "Started server process [34105]"}
+{"timestamp": "2025-05-24 16:36:43,851", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-24 16:36:43,851", "error": "Application startup complete."}
+{"timestamp": "2025-05-24 16:36:43,852", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-24 17:03:31,562", "error": "Shutting down"}
+{"timestamp": "2025-05-24 17:03:31,666", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-24 17:03:31,667", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-24 17:03:31,667", "error": "Finished server process [34105]"}
+{"timestamp": "2025-05-24 17:03:35,020", "error": "Started server process [34277]"}
+{"timestamp": "2025-05-24 17:03:35,020", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-24 17:03:35,021", "error": "Application startup complete."}
+{"timestamp": "2025-05-24 17:03:35,022", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-25 14:05:33,455", "error": "Started server process [41210]"}
+{"timestamp": "2025-05-25 14:05:33,458", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-25 14:05:33,459", "error": "Application startup complete."}
+{"timestamp": "2025-05-25 14:05:33,459", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-25 14:38:49,993", "error": "Invalid HTTP request received."}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 485, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/usr/lib/python3/dist-packages/h11/_util.py", line 77, in _reraise_as_remote_protocol_error
+    raise self
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 467, in next_event
+    event = self._extract_next_receive_event()
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 409, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/usr/lib/python3/dist-packages/h11/_readers.py", line 81, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+{"timestamp": "2025-05-25 15:32:58,003", "error": "Shutting down"}
+{"timestamp": "2025-05-25 15:32:58,105", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-25 15:32:58,105", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-25 15:32:58,106", "error": "Finished server process [41210]"}
+{"timestamp": "2025-05-25 17:42:14,601", "error": "Started server process [42326]"}
+{"timestamp": "2025-05-25 17:42:14,606", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-25 17:42:14,607", "error": "Application startup complete."}
+{"timestamp": "2025-05-25 17:42:14,608", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-25 19:02:38,214", "error": "Started server process [42781]"}
+{"timestamp": "2025-05-25 19:02:38,220", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-25 19:02:38,220", "error": "Application startup complete."}
+{"timestamp": "2025-05-25 19:02:38,221", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-25 19:03:08,254", "error": "Exception in ASGI application
+"}
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    |     result = await app(self.scope, self.receive, self.send)
+    |   File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    |     return await self.app(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 178, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/azureuser/cliente/./cliente.py", line 15, in contar_http_requests
+    |     response = await call_next(request)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 156, in call_next
+    |     raise app_exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 141, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    |     response = await f(request)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    |     return await future
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    |     result = context.run(func, *args)
+    |   File "/home/azureuser/cliente/./cliente.py", line 53, in prometheus_metrics
+    |     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+    | NameError: name 'Response' is not defined
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 178, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/azureuser/cliente/./cliente.py", line 15, in contar_http_requests
+    response = await call_next(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 156, in call_next
+    raise app_exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 53, in prometheus_metrics
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+NameError: name 'Response' is not defined
+{"timestamp": "2025-05-25 21:45:28,089", "error": "Shutting down"}
+{"timestamp": "2025-05-25 21:45:28,191", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-25 21:45:28,191", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-25 21:45:28,191", "error": "Finished server process [42781]"}
+{"timestamp": "2025-05-25 21:45:35,207", "error": "Started server process [43374]"}
+{"timestamp": "2025-05-25 21:45:35,211", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-25 21:45:35,211", "error": "Application startup complete."}
+{"timestamp": "2025-05-25 21:45:35,212", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-25 21:46:23,792", "error": "Shutting down"}
+{"timestamp": "2025-05-25 21:46:23,896", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-25 21:46:23,896", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-25 21:46:23,896", "error": "Finished server process [43374]"}
+{"timestamp": "2025-05-25 21:46:26,840", "error": "Started server process [43500]"}
+{"timestamp": "2025-05-25 21:46:26,842", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-25 21:46:26,844", "error": "Application startup complete."}
+{"timestamp": "2025-05-25 21:46:26,845", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-26 12:13:48,390", "error": "Started server process [49728]"}
+{"timestamp": "2025-05-26 12:13:48,394", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-26 12:13:48,395", "error": "Application startup complete."}
+{"timestamp": "2025-05-26 12:13:48,395", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-26 12:14:24,365", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-26 12:14:24,369", "error": "Exception in ASGI application
+"}
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    |     result = await app(self.scope, self.receive, self.send)
+    |   File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    |     return await self.app(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 178, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/azureuser/cliente/./cliente.py", line 28, in contar_http_requests
+    |     response = await call_next(request)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 156, in call_next
+    |     raise app_exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 141, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    |     response = await f(request)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    |     return await future
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    |     result = context.run(func, *args)
+    |   File "/home/azureuser/cliente/./cliente.py", line 61, in causar_error
+    |     raise ValueError("Esto es un error simulado desde el CLIENTE")
+    | ValueError: Esto es un error simulado desde el CLIENTE
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 178, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in contar_http_requests
+    response = await call_next(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 156, in call_next
+    raise app_exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 61, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-26 12:24:14,581", "error": "Shutting down"}
+{"timestamp": "2025-05-26 12:24:14,684", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-26 12:24:14,684", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-26 12:24:14,685", "error": "Finished server process [49728]"}
+{"timestamp": "2025-05-26 12:58:27,807", "error": "Started server process [49962]"}
+{"timestamp": "2025-05-26 12:58:27,810", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-26 12:58:27,811", "error": "Application startup complete."}
+{"timestamp": "2025-05-26 12:58:27,812", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-26 13:00:02,564", "error": "Shutting down"}
+{"timestamp": "2025-05-26 13:00:02,665", "error": "Waiting for application shutdown."}
+{"timestamp": "2025-05-26 13:00:02,666", "error": "Application shutdown complete."}
+{"timestamp": "2025-05-26 13:00:02,666", "error": "Finished server process [49962]"}
+{"timestamp": "2025-05-26 13:00:06,754", "error": "Started server process [49969]"}
+{"timestamp": "2025-05-26 13:00:06,758", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-26 13:00:06,759", "error": "Application startup complete."}
+{"timestamp": "2025-05-26 13:00:06,760", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-26 13:00:37,244", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-05-26 13:00:37,245", "error": "Exception in ASGI application
+"}
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    |     result = await app(self.scope, self.receive, self.send)
+    |   File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    |     return await self.app(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 178, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "/home/azureuser/cliente/./cliente.py", line 28, in contar_http_requests
+    |     response = await call_next(request)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 156, in call_next
+    |     raise app_exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 141, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    |     response = await f(request)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    |     return await future
+    |   File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    |     result = context.run(func, *args)
+    |   File "/home/azureuser/cliente/./cliente.py", line 61, in causar_error
+    |     raise ValueError("Esto es un error simulado desde el CLIENTE")
+    | ValueError: Esto es un error simulado desde el CLIENTE
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/lib/python3/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 178, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/home/azureuser/cliente/./cliente.py", line 28, in contar_http_requests
+    response = await call_next(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 156, in call_next
+    raise app_exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+  File "/home/azureuser/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/azureuser/cliente/./cliente.py", line 61, in causar_error
+    raise ValueError("Esto es un error simulado desde el CLIENTE")
+ValueError: Esto es un error simulado desde el CLIENTE
+{"timestamp": "2025-05-26 17:09:58,724", "error": "Started server process [51418]"}
+{"timestamp": "2025-05-26 17:09:58,728", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-26 17:09:58,729", "error": "Application startup complete."}
+{"timestamp": "2025-05-26 17:09:58,731", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-27 12:58:39,676", "error": "Started server process [3077]"}
+{"timestamp": "2025-05-27 12:58:39,685", "error": "Waiting for application startup."}
+{"timestamp": "2025-05-27 12:58:39,686", "error": "Application startup complete."}
+{"timestamp": "2025-05-27 12:58:39,688", "error": "Uvicorn running on http://0.0.0.0:8500 (Press CTRL+C to quit)"}
+{"timestamp": "2025-05-27 13:47:49,047", "error": "Invalid HTTP request received."}
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 485, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/usr/lib/python3/dist-packages/h11/_util.py", line 77, in _reraise_as_remote_protocol_error
+    raise self
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 467, in next_event
+    event = self._extract_next_receive_event()
+  File "/usr/lib/python3/dist-packages/h11/_connection.py", line 409, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/usr/lib/python3/dist-packages/h11/_readers.py", line 81, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
