@@ -1,0 +1,5 @@
+fastapi
+psutil
+requests
+prometheus_client
+uvicorn
