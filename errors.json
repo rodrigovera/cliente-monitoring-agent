@@ -829,3 +829,10 @@ Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/h11/_readers.py", line 81, in maybe_read_from_IDLE_client
     raise LocalProtocolError("illegal request line")
 h11._util.RemoteProtocolError: illegal request line
+{"timestamp": "2025-06-05 17:12:28,038", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-06-06 00:51:02,504", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-06-06 11:46:36,961", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-06-06 11:46:39,738", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-06-06 11:46:40,308", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-06-06 11:46:40,810", "error": "Esto es un error simulado desde el CLIENTE"}
+{"timestamp": "2025-06-06 11:46:41,101", "error": "Esto es un error simulado desde el CLIENTE"}
