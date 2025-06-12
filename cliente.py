@@ -12,7 +12,7 @@ from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 app = FastAPI()
 
 # Variables de configuración
-PUSHGATEWAY_URL = "http://20.127.192.215:9091"
+PUSHGATEWAY_URL = "http://20.55.80.149:9091"
 INSTANCE = "cliente"
 
 # Contador global para que el middleware también lo use
