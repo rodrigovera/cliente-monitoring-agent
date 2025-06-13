@@ -5,24 +5,24 @@ from datetime import datetime
 import threading
 import time
 import requests
-from fastapi.responses import Response  # ✅ Necesario para metrics_prometheus
+from fastapi.responses import Response
 from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 
+# 🔹 Ingreso interactivo de nombre e instancia
+NOMBRE = input("🧾 Ingrese el nombre del cliente (job): ").strip()
+INSTANCE = input("💡 Ingrese el nombre de la instancia (hostname): ").strip()
+PUSHGATEWAY_URL = "http://20.55.80.149:9091"
+
 app = FastAPI()
 
-# Variables de configuración
-PUSHGATEWAY_URL = "http://20.55.80.149:9091"
-INSTANCE = "cliente"
-
-# Contador global para que el middleware también lo use
+# Contador global para middleware
 http_requests_total_counter = Counter(
     "http_requests_total",
     "Total de peticiones HTTP recibidas",
     ["method", "endpoint", "instance"]
 )
 
-# Middleware para contar cada petición HTTP
 @app.middleware("http")
 async def contar_http_requests(request: Request, call_next):
     response = await call_next(request)
@@ -33,14 +33,13 @@ async def contar_http_requests(request: Request, call_next):
     ).inc()
     return response
 
-# Configura logs en formato JSON y en archivo
+# Configuración de logs JSON
 logging.basicConfig(
     filename="errors.json",
     level=logging.ERROR,
     format='{"timestamp": "%(asctime)s", "error": "%(message)s"}'
 )
 
-# Endpoint de métricas numéricas básicas (solo FastAPI)
 @app.get("/metrics")
 def get_metrics():
     return {
@@ -49,12 +48,10 @@ def get_metrics():
         "disk_usage": psutil.disk_usage("/").percent
     }
 
-# Endpoint de métricas en formato Prometheus
 @app.get("/metrics_prometheus")
 def prometheus_metrics():
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
-# Endpoint que genera un error intencional
 @app.get("/causar_error")
 def causar_error():
     try:
@@ -63,19 +60,16 @@ def causar_error():
         logging.error(str(e))
         raise
 
-# Hilo para empujar métricas al Push Gateway
 def push_metrics():
     registry = CollectorRegistry()
 
-    # Registrar métricas dentro del nuevo registro
     cpu_gauge = Gauge("cpu_percent", "CPU usage (%)", ["instance"], registry=registry)
     mem_gauge = Gauge("memory_percent", "RAM usage (%)", ["instance"], registry=registry)
     disk_gauge = Gauge("disk_usage", "Disk usage (%)", ["instance"], registry=registry)
 
-    # Registrar el contador global en el registro personalizado
     registry.register(http_requests_total_counter)
 
-    # Inicializa al menos una etiqueta para que Prometheus la vea aunque no haya tráfico
+    # Inicializa etiquetas
     http_requests_total_counter.labels(
         method="INIT",
         endpoint="/",
@@ -91,18 +85,17 @@ def push_metrics():
             cpu_gauge.labels(instance=INSTANCE).set(cpu)
             mem_gauge.labels(instance=INSTANCE).set(mem)
             disk_gauge.labels(instance=INSTANCE).set(disk)
-            print("🔍 MÉTRICAS REGISTRY ENVIADAS:\n" + generate_latest(registry).decode("utf-8"))
+
             push_to_gateway(
                 PUSHGATEWAY_URL.replace("http://", ""),
-                job=INSTANCE,
+                job=NOMBRE,
                 registry=registry
             )
 
-            print("[Push] Métricas empujadas correctamente")
+            print(f"[Push] ✅ Métricas empujadas desde '{NOMBRE}' ({INSTANCE})")
         except Exception as e:
-            print(f"[Push] Error al enviar métricas: {e}")
+            print(f"[Push] ❌ Error al enviar métricas: {e}")
         time.sleep(15)
 
-# Iniciar el hilo en segundo plano
+# 🔹 Activar hilo para push automático
 threading.Thread(target=push_metrics, daemon=True).start()
-
