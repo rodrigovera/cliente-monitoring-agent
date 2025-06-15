@@ -14,5 +14,8 @@ RUN touch errors.json && touch /tmp/positions.yaml
 
 # Puerto expuesto para FastAPI (si lo vas a consultar)
 EXPOSE 8000
-
+RUN pip install --no-cache-dir --upgrade prometheus_client
 CMD ["uvicorn", "cliente:app", "--host", "0.0.0.0", "--port", "8000"]
+
+
+

@@ -8,7 +8,7 @@ import requests
 from fastapi.responses import Response
 from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
-
+from prometheus_client.exposition import delete_from_gateway
 # 🔹 Ingreso interactivo de nombre e instancia
 NOMBRE = input("🧾 Ingrese el nombre del cliente (job): ").strip()
 INSTANCE = input("💡 Ingrese el nombre de la instancia (hostname): ").strip()
@@ -85,11 +85,12 @@ def push_metrics():
             cpu_gauge.labels(instance=INSTANCE).set(cpu)
             mem_gauge.labels(instance=INSTANCE).set(mem)
             disk_gauge.labels(instance=INSTANCE).set(disk)
-
+            delete_from_gateway(PUSHGATEWAY_URL.replace("http://", ""), job=NOMBRE)
             push_to_gateway(
                 PUSHGATEWAY_URL.replace("http://", ""),
                 job=NOMBRE,
-                registry=registry
+                registry=registry,
+		
             )
 
             print(f"[Push] ✅ Métricas empujadas desde '{NOMBRE}' ({INSTANCE})")

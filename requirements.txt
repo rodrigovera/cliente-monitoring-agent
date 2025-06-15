@@ -1,5 +1,5 @@
+prometheus_client>=0.13.0
 fastapi
 psutil
 requests
-prometheus_client
 uvicorn
