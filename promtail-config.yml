@@ -6,7 +6,7 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: http://20.127.192.215:3100/loki/api/v1/push
+  - url: http://20.55.80.149:3100/loki/api/v1/push
 
 scrape_configs:
   - job_name: cliente
@@ -16,4 +16,4 @@ scrape_configs:
         labels:
           job: cliente
           host: cliente-vm
-          __path__: /app/errors.json
+          __path__: /app/logs/errors.json
