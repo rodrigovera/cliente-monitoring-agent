@@ -1,5 +1,6 @@
 version: '3.8'
 
+
 services:
   cliente-app:
     build: .
@@ -8,14 +9,14 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./errors.json:/app/errors.json
+      - ./logs:/app/logs  # ✅ Carpeta compartida
 
   promtail:
     image: grafana/promtail:latest
     container_name: promtail-cliente
     volumes:
-      - ./errors.json:/app/errors.json
+      - ./logs:/app/logs  # ✅ Carpeta compartida
       - ./promtail-config.yml:/etc/promtail/promtail-config.yml
-      - ./positions:/tmp  # ✅ CAMBIO: usamos carpeta en vez de archivo
+      - ./positions:/tmp
     command: -config.file=/etc/promtail/promtail-config.yml
     restart: always

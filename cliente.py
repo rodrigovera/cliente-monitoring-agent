@@ -35,7 +35,7 @@ async def contar_http_requests(request: Request, call_next):
 
 # Configuración de logs JSON
 logging.basicConfig(
-    filename="errors.json",
+    filename="/app/logs/errors.json",
     level=logging.ERROR,
     format='{"timestamp": "%(asctime)s", "error": "%(message)s"}'
 )
