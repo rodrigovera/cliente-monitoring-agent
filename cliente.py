@@ -9,6 +9,7 @@ from fastapi.responses import Response
 from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 from prometheus_client.exposition import delete_from_gateway
+import os
 # 🔹 Ingreso interactivo de nombre e instancia
 NOMBRE = input("🧾 Ingrese el nombre del cliente (job): ").strip()
 INSTANCE = input("💡 Ingrese el nombre de la instancia (hostname): ").strip()
