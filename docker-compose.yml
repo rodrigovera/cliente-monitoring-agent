@@ -16,6 +16,6 @@ services:
     volumes:
       - ./errors.json:/app/errors.json
       - ./promtail-config.yml:/etc/promtail/promtail-config.yml
-      - ./positions.yaml:/tmp/positions.yaml
+      - ./positions:/tmp  # ✅ CAMBIO: usamos carpeta en vez de archivo
     command: -config.file=/etc/promtail/promtail-config.yml
     restart: always
