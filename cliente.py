@@ -10,7 +10,8 @@ from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 from prometheus_client.exposition import delete_from_gateway
 import os
-
+import signal
+import sys
 
 log_dir = "/app/logs"
 os.makedirs(log_dir, exist_ok=True)
@@ -114,6 +115,26 @@ def push_metrics():
         except Exception as e:
             print(f"[Push] ❌ Error al enviar métricas: {e}")
         time.sleep(15)
+
+
+def limpiar_pushgateway():
+    try:
+        delete_from_gateway(
+            gateway=PUSHGATEWAY_URL.replace("http://", ""),
+            job=NOMBRE,
+            grouping_key={"instance": INSTANCE}
+        )
+        print(f"[Exit] 🧹 Instancia '{INSTANCE}' borrada del PushGateway")
+    except Exception as e:
+        print(f"[Exit] ⚠️ Error limpiando métricas: {e}")
+
+def signal_handler(sig, frame):
+    limpiar_pushgateway()
+    sys.exit(0)
+
+# Registrar señales para apagar limpio
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
 
 # 🔹 Activar hilo para push automático
 threading.Thread(target=push_metrics, daemon=True).start()
