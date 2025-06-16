@@ -97,7 +97,12 @@ def push_metrics():
             cpu_gauge.labels(instance=INSTANCE).set(cpu)
             mem_gauge.labels(instance=INSTANCE).set(mem)
             disk_gauge.labels(instance=INSTANCE).set(disk)
-            delete_from_gateway(PUSHGATEWAY_URL.replace("http://", ""), job=NOMBRE)
+            delete_from_gateway(
+                gateway=PUSHGATEWAY_URL.replace("http://", ""),
+                job=NOMBRE,
+                grouping_key={"instance": INSTANCE}
+            )
+
             push_to_gateway(
                 PUSHGATEWAY_URL.replace("http://", ""),
                 job=NOMBRE,
