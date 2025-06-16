@@ -16,6 +16,7 @@ import sys
 log_dir = "/app/logs"
 os.makedirs(log_dir, exist_ok=True)
 
+# ✅ Configuración única del logger
 logging.basicConfig(
     filename=f"{log_dir}/errors.json",
     level=logging.ERROR,
@@ -45,13 +46,6 @@ async def contar_http_requests(request: Request, call_next):
         instance=INSTANCE
     ).inc()
     return response
-
-# Configuración de logs JSON
-logging.basicConfig(
-    filename="/app/logs/errors.json",
-    level=logging.ERROR,
-    format='{"timestamp": "%(asctime)s", "error": "%(message)s"}'
-)
 
 @app.get("/metrics")
 def get_metrics():
@@ -98,6 +92,7 @@ def push_metrics():
             cpu_gauge.labels(instance=INSTANCE).set(cpu)
             mem_gauge.labels(instance=INSTANCE).set(mem)
             disk_gauge.labels(instance=INSTANCE).set(disk)
+
             delete_from_gateway(
                 gateway=PUSHGATEWAY_URL.replace("http://", ""),
                 job=NOMBRE,
@@ -108,14 +103,12 @@ def push_metrics():
                 PUSHGATEWAY_URL.replace("http://", ""),
                 job=NOMBRE,
                 registry=registry,
-		
             )
 
             print(f"[Push] ✅ Métricas empujadas desde '{NOMBRE}' ({INSTANCE})")
         except Exception as e:
             print(f"[Push] ❌ Error al enviar métricas: {e}")
         time.sleep(15)
-
 
 def limpiar_pushgateway():
     try:
