@@ -24,8 +24,9 @@ logging.basicConfig(
 )
 
 # 🔹 Ingreso interactivo de nombre e instancia
-NOMBRE = os.getenv("NOMBRE", "cliente")
-INSTANCE = os.getenv("INSTANCE", "cliente-vm")
+NOMBRE = os.getenv("NOMBRE_CLIENTE", "cliente")
+INSTANCE = os.getenv("NOMBRE_INSTANCIA", "cliente-vm")
+
 PUSHGATEWAY_URL = "http://20.55.80.149:9091"
 
 app = FastAPI()
