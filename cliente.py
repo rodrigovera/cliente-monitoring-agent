@@ -13,29 +13,28 @@ import os
 import signal
 import sys
 
+# 📁 Logs en JSON
 log_dir = "/app/logs"
 os.makedirs(log_dir, exist_ok=True)
-
-# ✅ Configuración única del logger
 logging.basicConfig(
     filename=f"{log_dir}/errors.json",
     level=logging.ERROR,
     format='{"timestamp": "%(asctime)s", "error": "%(message)s"}'
 )
 
-# 🔹 Ingreso interactivo de nombre e instancia
-NOMBRE = os.getenv("NOMBRE_CLIENTE", "cliente")
-INSTANCE = os.getenv("NOMBRE_INSTANCIA", "cliente-vm")
-
+# 🔐 Variables de entorno
+NOMBRE = os.getenv("NOMBRE_CLIENTE", "cliente")  # job
+INSTANCE = os.getenv("NOMBRE_INSTANCIA", os.getenv("HOSTNAME", "instancia"))
 PUSHGATEWAY_URL = "http://20.55.80.149:9091"
 
+# 🚀 FastAPI app
 app = FastAPI()
 
-# Contador global para middleware
+# 📊 Contador global HTTP requests
 http_requests_total_counter = Counter(
     "http_requests_total",
     "Total de peticiones HTTP recibidas",
-    ["method", "endpoint", "instance"]
+    ["method", "endpoint", "job", "instance"]
 )
 
 @app.middleware("http")
@@ -44,6 +43,7 @@ async def contar_http_requests(request: Request, call_next):
     http_requests_total_counter.labels(
         method=request.method,
         endpoint=request.url.path,
+        job=NOMBRE,
         instance=INSTANCE
     ).inc()
     return response
@@ -71,16 +71,17 @@ def causar_error():
 def push_metrics():
     registry = CollectorRegistry()
 
-    cpu_gauge = Gauge("cpu_percent", "CPU usage (%)", ["instance"], registry=registry)
-    mem_gauge = Gauge("memory_percent", "RAM usage (%)", ["instance"], registry=registry)
-    disk_gauge = Gauge("disk_usage", "Disk usage (%)", ["instance"], registry=registry)
+    cpu_gauge = Gauge("cpu_percent", "CPU usage (%)", ["job", "instance"], registry=registry)
+    mem_gauge = Gauge("memory_percent", "RAM usage (%)", ["job", "instance"], registry=registry)
+    disk_gauge = Gauge("disk_usage", "Disk usage (%)", ["job", "instance"], registry=registry)
 
     registry.register(http_requests_total_counter)
 
-    # Inicializa etiquetas
+    # Inicializa etiquetas (sin sumar)
     http_requests_total_counter.labels(
         method="INIT",
         endpoint="/",
+        job=NOMBRE,
         instance=INSTANCE
     ).inc(0)
 
@@ -90,9 +91,9 @@ def push_metrics():
             mem = psutil.virtual_memory().percent
             disk = psutil.disk_usage("/").percent
 
-            cpu_gauge.labels(instance=INSTANCE).set(cpu)
-            mem_gauge.labels(instance=INSTANCE).set(mem)
-            disk_gauge.labels(instance=INSTANCE).set(disk)
+            cpu_gauge.labels(job=NOMBRE, instance=INSTANCE).set(cpu)
+            mem_gauge.labels(job=NOMBRE, instance=INSTANCE).set(mem)
+            disk_gauge.labels(job=NOMBRE, instance=INSTANCE).set(disk)
 
             delete_from_gateway(
                 gateway=PUSHGATEWAY_URL.replace("http://", ""),
@@ -126,9 +127,8 @@ def signal_handler(sig, frame):
     limpiar_pushgateway()
     sys.exit(0)
 
-# Registrar señales para apagar limpio
 signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
 
-# 🔹 Activar hilo para push automático
+# 🧵 Activar hilo en segundo plano
 threading.Thread(target=push_metrics, daemon=True).start()
