@@ -4,8 +4,13 @@ echo "🧾 Instalador de cliente de monitoreo"
 read -p "👉 Nombre del cliente (job): " cliente
 read -p "💡 Nombre de la instancia (hostname): " instancia
 
+# 🔹 Guarda en .env para el contenedor
 echo "NOMBRE_CLIENTE=$cliente" > .env
 echo "NOMBRE_INSTANCIA=$instancia" >> .env
+
+# 🔹 Exporta para que Docker Compose lo use como hostname
+export NOMBRE_CLIENTE=$cliente
+export NOMBRE_INSTANCIA=$instancia
 
 echo "🛠️ Construyendo contenedores..."
 mkdir -p logs positions

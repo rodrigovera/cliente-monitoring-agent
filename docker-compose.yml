@@ -5,12 +5,15 @@ services:
     build: .
     container_name: cliente-app
     restart: always
+    hostname: ${NOMBRE_INSTANCIA} 
     ports:
       - "8000:8000"
     volumes:
       - ./logs:/app/logs
     env_file:
       - .env
+    networks:
+      - monitoring
 
   promtail:
     image: grafana/promtail:latest
@@ -21,3 +24,7 @@ services:
       - ./positions:/tmp
     command: -config.file=/etc/promtail/promtail-config.yml
     restart: always
+    networks:
+      - monitoring
+networks:
+  monitoring:
