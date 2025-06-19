@@ -16,19 +16,23 @@ services:
       - monitoring
 
   dockerize:
-    image: jwilder/dockerize:latest
+    image: alpine:latest
+    container_name: dockerize-temporal
     volumes:
       - ./promtail/promtail-config.yml.tmpl:/template/promtail-config.yml.tmpl
       - ./promtail:/output
       - ./.env:/env/.env
     entrypoint: >
       /bin/sh -c "
+        apk add --no-cache curl && \
+        curl -sL https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz | tar -C /usr/local/bin -xz && \
         cp /env/.env /tmp/.env && \
         set -a && . /tmp/.env && set +a && \
         dockerize -template /template/promtail-config.yml.tmpl:/output/promtail-config.yml
       "
     networks:
       - monitoring
+
 
   promtail:
     image: grafana/promtail:latest
