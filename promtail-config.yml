@@ -15,5 +15,6 @@ scrape_configs:
           - localhost
         labels:
           job: {{ .Env.NOMBRE_CLIENTE }}
+          exported_job: {{ .Env.NOMBRE_CLIENTE }}   # <<--- Agregado
           host: {{ .Hostname }}
           __path__: /app/logs/errors.json
