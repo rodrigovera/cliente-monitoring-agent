@@ -5,7 +5,7 @@ services:
     build: .
     container_name: cliente-app
     restart: always
-    hostname: ${NOMBRE_INSTANCIA} 
+    hostname: ${NOMBRE_INSTANCIA}
     ports:
       - "8000:8000"
     volumes:
@@ -15,16 +15,32 @@ services:
     networks:
       - monitoring
 
+  dockerize:
+    image: jwilder/dockerize:latest
+    volumes:
+      - ./promtail/promtail-config.yml.tmpl:/template/promtail-config.yml.tmpl
+      - ./promtail:/output
+      - ./.env:/env/.env
+    entrypoint: >
+      /bin/sh -c "
+        cp /env/.env /tmp/.env && \
+        set -a && . /tmp/.env && set +a && \
+        dockerize -template /template/promtail-config.yml.tmpl:/output/promtail-config.yml
+      "
+    networks:
+      - monitoring
+
   promtail:
     image: grafana/promtail:latest
     container_name: promtail-cliente
     volumes:
       - ./logs:/app/logs
-      - ./promtail-config.yml:/etc/promtail/promtail-config.yml
+      - ./promtail/promtail-config.yml:/etc/promtail/promtail-config.yml
       - ./positions:/tmp
     command: -config.file=/etc/promtail/promtail-config.yml
     restart: always
     networks:
       - monitoring
+
 networks:
   monitoring:

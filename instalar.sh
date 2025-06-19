@@ -14,6 +14,11 @@ export NOMBRE_INSTANCIA=$instancia
 
 echo "🛠️ Construyendo contenedores..."
 mkdir -p logs positions
+
+# 🔧 Renderiza el archivo promtail-config.yml usando Dockerize
+docker compose run --rm dockerize
+
+# 🚀 Levanta los servicios
 docker compose down
 docker compose up -d --build
 
