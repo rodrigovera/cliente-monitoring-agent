@@ -30,6 +30,7 @@ services:
         set -a && . /tmp/.env && set +a && \
         dockerize -template /template/promtail-config.yml.tmpl:/output/promtail-config.yml
       "
+
     networks:
       - monitoring
 
