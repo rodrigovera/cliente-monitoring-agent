@@ -20,7 +20,7 @@ services:
     container_name: dockerize-temporal
     volumes:
       - ./promtail/promtail-config.yml.tmpl:/template/promtail-config.yml.tmpl
-      - ./promtail/promtail-config.yml:/output/promtail-config.yml
+      - ./promtail:/output
       - ./.env:/env/.env
     entrypoint: >
       /bin/sh -c "

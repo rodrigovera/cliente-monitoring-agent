@@ -7,7 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY cliente.py .
-COPY promtail-config.yml .
+#COPY promtail-config.yml .
 
 # Crear archivo vacío para logs y posiciones
 RUN touch errors.json && touch /tmp/positions.yaml

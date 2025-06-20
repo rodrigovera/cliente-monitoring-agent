@@ -1,4 +1,21 @@
 .env
 logs/
 positions/
+# Archivos de entorno
+.env
+
+# Archivos generados automáticamente
+promtail/promtail-config.yml
+
+# Logs de la aplicación
+logs/
+positions/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env/
 

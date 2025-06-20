@@ -14,7 +14,7 @@ scrape_configs:
       - targets:
           - localhost
         labels:
-          job: "{{ .NOMBRE_CLIENTE }}"
-          exported_job: "{{ .NOMBRE_CLIENTE }}"
-          host: "{{ .NOMBRE_INSTANCIA }}"
+          job: "{{ .Env.NOMBRE_CLIENTE }}"
+          exported_job: "{{ .Env.NOMBRE_CLIENTE }}"
+          host: "{{ .Env.NOMBRE_INSTANCIA }}"
           __path__: /app/logs/errors.json
